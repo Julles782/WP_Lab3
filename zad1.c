@@ -28,11 +28,10 @@ int main(void) {
     // Kolejne zadania do wykonania:
     // -----------------------------
     // 1. Wczytaj wszystkie indeksy studentów do tablicy 'indeksy[MAX]'.
-    // 2. Posortuj tablicę indeksów rosnąco (np. sortowanie bąbelkowe).
-    // 3. Oblicz średnią wartości indeksów i wypisz indeksy większe od średniej.
-    // 4. Wczytaj dane z pliku 'egzamin.txt'.
-    // 5. Na podstawie punktów oblicz oceny (np. >90% = 5, >75% = 4, >50% = 3, reszta 2).
-    // 6. Zapisz wyniki do pliku 'wyniki.txt' w formacie: numer indeksu i ocena.
+    // 2. Oblicz średnią wartości indeksów i wypisz indeksy większe od średniej.
+    // 3. Wczytaj dane z pliku 'egzamin.txt'.
+    // 4. Na podstawie punktów oblicz oceny (np. >90% = 5, >75% = 4, >50% = 3, reszta 2).
+    // 5. Zapisz wyniki do pliku 'wyniki.txt' w formacie: numer indeksu i ocena.
 
     return 0;
 }
