@@ -49,6 +49,100 @@ int main(void) {
     }
     fclose(fp);
 
+    FILE *egzamin = fopen("egzamin.txt", "r");
+        if(!egzamin) {
+
+            printf("Nie udało się otworzyć pliku \n");
+            return 1;
+
+    }
+    int wyniki[MAX];
+    for (int i = 0; i < MAX; i++){
+
+        fscanf(egzamin, "%d %d", &indeks, &wyniki[i]);
+        printf("Wyniki: %d ", wyniki[i]);
+        double procent = (double) wyniki[i] / 90 * 100;
+        /*if(wyniki[i] > 90){
+
+            printf("- 5 \n");
+        }
+
+
+       else if(wyniki[i] > 75){
+
+            printf("- 4 \n");
+        }
+
+        else if(wyniki[i] > 50){
+
+            printf("- 3 \n");
+        }
+
+        else {
+
+            printf("- 2 \n");
+        }*/
+        
+        if(procent > 90){
+
+            printf("- 5 \n");
+        }
+
+
+       else if(procent > 75){
+
+            printf("- 4 \n");
+        }
+
+        else if(procent > 50){
+
+            printf("- 3 \n");
+        }
+
+        else {
+
+            printf("- 2 \n");
+        }
+    }
+
+ 
+    fclose(egzamin);
+
+
+    FILE *plik_z_wynikami = fopen ("wyniki.txt", "w");
+    if(!plik_z_wynikami){
+
+        printf("NIe udało się utworzyć pliku wyniki.txt");
+        return 1;
+    }
+
+    for (int i = 0; i < MAX; i++){
+
+        int ocena;
+        double procent = (double) wyniki[i] / 90 * 100;
+         if(procent > 90){
+
+            ocena =5;
+        }
+
+
+       else if(procent > 75){
+
+            ocena = 4;
+        }
+
+        else if(procent > 50){
+
+            ocena = 3;
+        }
+
+        else {
+
+            ocena = 2;
+        }
+        fprintf(plik_z_wynikami, "%d %d\n", indeksy[i], ocena);
+    }
+    fclose(plik_z_wynikami);
     // -----------------------------
     // Kolejne zadania do wykonania:
     // -----------------------------
@@ -58,9 +152,7 @@ int main(void) {
     // 4. Na podstawie punktów oblicz oceny (np. >90% = 5, >75% = 4, >50% = 3, reszta 2).
     // 5. Zapisz wyniki do pliku 'wyniki.txt' w formacie: numer indeksu i ocena.
 
-    int  tablica[10];
-
-    tablica[3] = 5;
+  
 
     return 0;
 }
